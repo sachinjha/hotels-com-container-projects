@@ -1,0 +1,9 @@
+---
+applications:
+- name: amenitiesquery
+  memory: 256M
+  instances: 1
+  host: amenitiesquery
+  services:
+  - mysql
+  - redis

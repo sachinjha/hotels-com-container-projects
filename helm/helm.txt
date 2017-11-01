@@ -1,0 +1,8 @@
+helm package hotels.com
+helm install hotels.com
+
+helm status hotels.com
+helm list dapper-marsupial
+
+helm rollback dapper-marsupial 1
+helm delete dapper-marsupial

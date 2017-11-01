@@ -1,0 +1,16 @@
+{
+  "name": "hotels.com",
+  "version": "0.1.0",
+  "private": true,
+  "description": "hotels.com - Single Page Application",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "4.15.2"
+  },
+  "repository": {},
+  "engines": {
+    "node": ">=4.3.2"
+  }
+}

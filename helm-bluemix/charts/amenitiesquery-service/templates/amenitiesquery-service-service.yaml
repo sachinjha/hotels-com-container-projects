@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    io.kompose.service: amenitiesquery-service
+  name: amenitiesquery-service
+  namespace: hotelscom    
+spec:
+  type: LoadBalancer
+  ports:
+  - name: "9014"
+    port: 9014
+    nodePort: 31014    
+    targetPort: 9014
+  selector:
+    io.kompose.service: amenitiesquery-service
+status:
+  loadBalancer: {}

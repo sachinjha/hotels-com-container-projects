@@ -1,0 +1,27 @@
+{
+  "name": "Controller",
+  "version": "1.0.0",
+  "description": "Controller for hotels.com",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "4.12.x",
+    "cfenv": "1.0.x",
+    "async": "*",
+    "underscore": "*",
+    "request": "*",
+    "cors": "*",
+    "zipkin": "*",
+    "zipkin-instrumentation-request": "*",
+    "zipkin-instrumentation-express": "*",
+    "zipkin-context-cls": "*",
+    "zipkin-transport-http": "*",
+    "redis": "*"
+  },
+  "devDependencies": {},
+  "repository": {},
+  "engines": {
+    "node": "*"
+  }
+}

@@ -1,0 +1,49 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    io.kompose.service: controller
+  name: controller
+  namespace: hotelscom    
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: controller
+    spec:
+      containers:
+      - env:
+        - name: AMENITIESQUERYHOST
+          value: http://amenitiesquery-service
+        - name: AMENITIESQUERYPORT
+          value: "9014"
+        - name: DEALQUERYHOST
+          value: http://dealsquery-service
+        - name: DEALQUERYPORT
+          value: "9013"
+        - name: HOTELQUERYHOST
+          value: http://hotelquery-service
+        - name: HOTELQUERYPORT
+          value: "9012"
+        - name: LOCATIONQUERYHOST
+          value: http://locationquery-service
+        - name: LOCATIONQUERYPORT
+          value: "9011"
+        - name: PORT
+          value: "9101"
+        - name: ZIPKINURI
+          value: http://zipkin:9411
+        - name: ZIPKINSAMPLERATE
+          value: "0.1"
+        imagePullPolicy: IfNotPresent          
+        image: hotels.com/controller
+        name: controller
+        ports:
+        - containerPort: 9101
+        resources: {}
+      restartPolicy: Always
+status: {}

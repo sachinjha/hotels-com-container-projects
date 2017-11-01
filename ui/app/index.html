@@ -1,0 +1,62 @@
+<html lang="en" ng-app="StarterApp">
+  <head>
+    <title>Hotels.com</title>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/main.css">
+  </head>
+
+  <body layout="column" ng-controller="AppCtrl">
+    <md-toolbar layout="row">
+      <div class="md-toolbar-tools">
+        <md-button ng-click="toggleSidenav('left')"  class="md-icon-button">
+          <i class="material-icons">menu</i>
+        </md-button>
+        <span flex></span>        
+        <h1>Hotels.com</h1>
+      </div>
+    </md-toolbar>
+    
+    <div class="contentcontainer">
+      <div flex="20" layout-align="start start">
+        <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="left">
+          <md-toolbar class="md-theme-indigo">
+            <h1 class="md-toolbar-tools">Options</h1>
+          </md-toolbar>
+
+          <div ng-include src="'./templates/options.html'">
+          </div>
+		    </md-sidenav>
+      </div>
+
+      <div flex="80" layout-align="start center">
+        <div class="searchcontainer">
+  	      <md-autocomplete id="locationsearch" md-selected-item="selectedLocation" md-search-text="searchText" md-items="location in getLocationMatches(searchText)" 
+          md-item-text="location.displayname" md-floating-label="Search locations" md-selected-item-change="onLocationChanged(selectedLocation)" md-clear-button="true">
+	          <md-item-template >
+              <span>
+                <md-icon md-svg-icon="{{location.icon}}"></md-icon>
+                <span md-highlight-text="searchText">{{location.displayname}}</span>
+              </span>
+            </md-item-template>
+          </md-autocomplete>
+        </div>
+
+        <div layout="column" flex id="content" ng-view>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Angular Material Dependencies -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-touch.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>

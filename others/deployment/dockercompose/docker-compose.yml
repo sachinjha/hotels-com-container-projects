@@ -1,0 +1,108 @@
+version: '3'
+services:
+  redis:
+    image: "redis:alpine"
+    ports:
+      - 9001:6379
+    volumes:
+      - /Users/admin/Documents/ISL/Code/Bluemix/microservices/hotels.com/others/deployment/dockercompose/redis:/data  
+  mysql:
+    image: "mysql:latest"
+    ports:
+      - 9002:3306
+    volumes:
+      - /Users/admin/Documents/ISL/Code/Bluemix/microservices/hotels.com/others/deployment/dockercompose/mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=password 
+  zipkin:
+    image: "openzipkin/zipkin:latest"
+    ports:
+      - 9411:9411                 
+  locationquery-service:
+    build: ../../../locationquery
+    image: hotels.com/locationquery-service
+    ports:
+      - 9011:9011
+    environment:
+      - REDISURI=redis://redis:6379/0
+      - PORT=9011
+      - ZIPKINURI=http://zipkin:9411
+      - ZIPKINSAMPLERATE=1     
+    links:
+      - "redis"
+  hotelquery-service:
+    build: ../../../hotelquery
+    image: hotels.com/hotelquery-service
+    ports:
+      - 9012:9012
+    environment:
+      - REDISURI=redis://redis:6379/0
+      - MQURI=redis://redis:6379/0     
+      - PORT=9012
+      - ZIPKINURI=http://zipkin:9411
+      - ZIPKINSAMPLERATE=1
+      - DEBUG=1
+    links:
+      - "redis"      
+  dealsquery-service:
+    build: ../../../dealsquery
+    image: hotels.com/dealsquery-service
+    ports:
+      - 9013:9013
+    environment:
+      - MQURI=redis://redis:6379/0
+      - MYSQLURI=mysql://root:password@mysql:3306/sys     
+      - PORT=9013
+      - ZIPKINURI=http://zipkin:9411
+      - ZIPKINSAMPLERATE=1      
+    links:
+      - "mysql"
+      - "redis"      
+  amenitiesquery-service:
+    build: ../../../amenitiesquery
+    image: hotels.com/amenitiesquery-service
+    ports:
+      - 9014:9014
+    environment:
+      - MQURI=redis://redis:6379/0
+      - MYSQLURI=mysql://root:password@mysql:3306/sys         
+      - PORT=9014
+      - ZIPKINURI=http://zipkin:9411
+      - ZIPKINSAMPLERATE=1      
+    links:
+      - "mysql"
+      - "redis"         
+  controller:
+    build: ../../../controller
+    image: hotels.com/controller
+    ports:
+      - 9101:9101
+    environment:
+      - PORT=9101 
+      - LOCATIONQUERYHOST=http://locationquery-service
+      - LOCATIONQUERYPORT=9011
+      - HOTELQUERYHOST=http://hotelquery-service
+      - HOTELQUERYPORT=9012
+      - DEALQUERYHOST=http://dealsquery-service
+      - DEALQUERYPORT=9013
+      - AMENITIESQUERYHOST=http://amenitiesquery-service
+      - AMENITIESQUERYPORT=9014           
+      - ZIPKINURI=http://zipkin:9411
+      - ZIPKINSAMPLERATE=0.1 
+    links:
+      - "locationquery-service"
+      - "hotelquery-service"
+      - "dealsquery-service"
+      - "amenitiesquery-service"
+  ui:
+    build: ../../../ui
+    image: hotels.com/ui
+    ports:
+      - 9102:9102
+    environment:
+      - PORT=9102
+      - APIENDPOINTURL=http://localhost:9101   
+    volumes:
+      - /Users/admin/Documents/ISL/Code/Bluemix/microservices/hotels.com/others/images:/usr/src/ui/app/images     
+    links:
+      - "controller"     

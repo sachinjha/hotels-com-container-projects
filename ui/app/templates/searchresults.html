@@ -1,0 +1,58 @@
+<md-content class="maincontent" layout-align="start center">
+  <div class="searchresults">
+    <md-card ng-repeat="hotel in hotels | orderBy:selectedSortorder" class="hotelcards">
+      <div layout="row" layout-margin>
+        <div flex="20">
+          <img ng-src="{{hotel.image}}" class="hotelimage" alt="{{hotel.name}}"/>
+        </div>        
+        <div flex="45" layout-align="start start">
+          <div layout="column">
+            <span class="md-headline">{{hotel.displayname}}</span>
+            <md-divider></md-divider>
+          </div>
+          <div layout="row">
+            <div flex="30" layout-margin>
+              <div class="paddedcontainer"><span class="md-subhead">Distance (km): {{hotel.distance}}</span></div>
+              <div class="paddedcontainer" ng-switch="{{hotel.thirdpartyrating}}">
+                <div ng-switch-when="1"> <img ng-src="images/icons/Starrating-1.png" class="ratingimage"  /> </div>
+                <div ng-switch-when="2"> <img ng-src="images/icons/Starrating-2.png" class="ratingimage"  /> </div>
+                <div ng-switch-when="3"> <img ng-src="images/icons/Starrating-3.png" class="ratingimage"  /> </div>
+                <div ng-switch-when="4"> <img ng-src="images/icons/Starrating-4.png" class="ratingimage"  /> </div>
+                <div ng-switch-when="5"> <img ng-src="images/icons/Starrating-5.png" class="ratingimage"  /> </div>                                
+              </div>
+            </div>
+            <div flex="40">
+            </div>
+          </div>
+        </div>
+        <md-divider class="vertical-divider"></md-divider>
+        <div flex="15">
+          <div layout="column" class="amenitiescontainer" ng-repeat-start="topamenity in hotel.topamenities">
+            <div layout="row">
+              <div layout="column">
+                <img ng-src="{{topamenity.icon}}" class="amenityicon" alt="{{topamenity.amenity}}" /> 
+                <span ng-switch="{{topamenity.isfree}}">
+                  <div ng-switch-when="1"><img ng-src="images/icons/free.png" class="freeicon" /></div>
+                  <div ng-switch-when="0"></div>
+                </span>
+              </div>
+              <span flex layout-margin>{{topamenity.label}}</span>
+            </div>         
+          </div>
+          <div ng-repeat-end></div>
+        </div>         
+        <md-divider class="vertical-divider"></md-divider>
+        <div flex="15">
+          <div layout="column" class="dealscontainer">
+            <span ng-repeat-start="deal in hotel.deals" class="md-subhead">{{deal.agency}}</span>
+            <span class="md-body-2 md-accent">{{deal.price  | currency:"₹":0}}</span>
+            <span ng-if = "!$last"> <md-divider></md-divider> </span>
+            <span ng-repeat-end></span>
+            <span flex></span>
+            <md-button class="md-raised">More Info</md-button>
+          </div>
+        </div>          
+      </div>
+    </md-card>
+  </div>
+</md-content>

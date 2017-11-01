@@ -1,0 +1,7 @@
+name: locationquery-service
+description: Location Query Service
+version: 0.0.1
+keywords:
+  - Location Query Service
+sources:
+home:

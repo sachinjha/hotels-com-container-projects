@@ -1,0 +1,7 @@
+name: hotelquery-service
+description: Hotel Query Service
+version: 0.0.1
+keywords:
+  - Hotel Query Service
+sources:
+home:

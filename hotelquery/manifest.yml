@@ -1,0 +1,11 @@
+---
+applications:
+- name: hotelquery
+  memory: 256M
+  instances: 1
+  host: hotelquery
+  services:
+  - redis  
+  env:
+    ZIPKINURI: http://184.172.247.27:30073/
+    DEBUG: 1  

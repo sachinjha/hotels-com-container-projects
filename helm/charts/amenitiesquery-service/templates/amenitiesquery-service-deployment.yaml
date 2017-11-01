@@ -1,0 +1,41 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    io.kompose.service: amenitiesquery-service
+  name: amenitiesquery-service
+  namespace: hotelscom    
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: amenitiesquery-service
+    spec:
+      imagePullSecrets:
+        - name: regsecret    
+      containers:
+      - env:
+        - name: MQURI
+          value: "redis://redis:9001/0"
+        - name: PORT
+          value: "9014"
+        - name: ZIPKINURI
+          value: "http://zipkin:9411"
+        - name: ZIPKINSAMPLERATE
+          value: "1"
+        - name: MYSQLURI
+          value: "mysql://root:password@mysql:9002/sys"
+        - name: DEBUG
+          value: "1"           
+        imagePullPolicy: IfNotPresent          
+        image: mycluster.icp:8500/hotelscom/amenitiesquery-service
+        name: amenitiesquery-service
+        ports:
+        - containerPort: 9014
+        resources: {}
+      restartPolicy: Always
+status: {}

@@ -1,0 +1,21 @@
+eval $(minikube docker-env)
+kubectl config use-context bxkube
+
+kubectl get nodes -o template --template='{{range.items}}{{range.status.addresses}}{{if eq .type "ExternalIP"}}{{.address}}{{end}}{{end}} {{end}}'
+
+kubectl expose deployment/redis --type=NodePort --port=31000 --name=redis --target-port=9001
+
+bx cs workers bxkube
+184.173.5.169
+
+bx cs cluster-service-bind bxkube default redis
+
+kubectl config set-cluster cfc --server=https://192.168.122.10:8001 --insecure-skip-tls-verify=true
+kubectl config set-context cfc --cluster=cfc
+kubectl config set-credentials user --token=eyJhbGciOiJSUzI1NiIsImtpZCI6IjY5NjI2ZDJkNjM2NjYzMmQ3MzY1NzI3NjY5NjM2NTJkNmI2NTc5NjkiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJjZmMtc2VydmljZSIsImV4cCI6MTUwNDcxMDQwNSwiaWF0IjoxNTA0NjY3MjA3LCJpc3MiOiJodHRwczovL21hc3Rlci5jZmM6ODQ0My9hY3MvYXBpL3YxL2F1dGgiLCJwcm9qZWN0cyI6WyJkZWZhdWx0Il0sInN1YiI6ImFkbWluIn0.VzDWdGdzCdCb0ZO4g-seei0YudpRC5CLYaqACaZHO8qIzEc5wKaKqFPcH84Vi6CmymIgU3ye4jTWqeNVft2cseL4rfkE2Wpy7Es77hZgFPmIHjOOestg7eM0TlrEO8TcOEfsFx9RTKzAQcCjqVFZjVt_S2NHPcJf8zcZZ-1FU6kbQATa0MmviTYiub2iabaEaJ0NzsspnyhFJ0k08i997KWPCe8BBFYxKTHKrvC8EX1rxjV3IJqyCAqx-lIfhE3W-_862iSo4eoJAgVSeLOBEFZd2gc145b42oq5LreqkeaYm1oWYSJleGSIr4F9BBOPRKMlhUSnwCTj8J9BEEIEeQ
+kubectl config set-context cfc --user=user --namespace=default
+kubectl config use-context cfc
+
+kubectl cp images hotelscom/ui-3067728811-sw77k:/usr/src/ui/app/images
+
+curl -XPOST -H "Authorization: ${OAUTH_TOKEN}" -H "Organization: ${ORG_GUID}" -H "Account: ${ACCOUNT_ID}" https://registry.eu-gb/api/v1/tokens?permanent=true

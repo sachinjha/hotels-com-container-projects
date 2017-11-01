@@ -1,0 +1,31 @@
+<md-content class="optionscontent" layout-align="start center">
+  <div layout="column" class="optionscontainer" ng-init="init()">
+    <div class="filterbox" layout="row"> 
+      <span flex class="md-subhead" layout-margin>Sort:</span>
+      <span flex class="md-subhead"> 
+        <select ng-model="$parent.selectedSortorder" ng-options="sortorder.key as sortorder.title for sortorder in sortorders" layout-margin>
+        </select> 
+      </span>                
+    </div>
+    <md-divider></md-divider>
+
+    <div class="filterbox" layout="row">
+      <md-slider-container>
+        <span flex layout="row">
+          <span flex="60" layout-margin>Distance (1-20 km):</span>
+          <span flex="20">
+            <md-button class="md-mini md-raised"  aria-label="Apply distance" ng-click="onApplydistance()">
+              <md-icon md-svg-src="images/icons/distance.svg"></md-icon>
+            </md-button>
+          </span>
+        </span>
+        <span>
+          <md-slider flex md-discrete ng-model="$parent.distance" step="1" min="1" max="20" aria-label="distance">
+          </md-slider>
+        </span>
+      </md-slider-container>
+    </div>
+    <md-divider></md-divider>
+    
+  </div>
+</md-content>

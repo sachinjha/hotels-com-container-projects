@@ -1,0 +1,37 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    io.kompose.service: locationquery-service
+  name: locationquery-service
+  namespace: hotelscom    
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: locationquery-service
+    spec:
+      imagePullSecrets:
+        - name: regsecret    
+      containers:
+      - env:
+        - name: PORT
+          value: "9011"
+        - name: REDISURI
+          value: redis://redis:9001/0
+        - name: ZIPKINURI
+          value: http://zipkin:9411
+        - name: ZIPKINSAMPLERATE
+          value: "1"
+        imagePullPolicy: IfNotPresent  
+        image: mycluster.icp:8500/hotelscom/locationquery-service
+        name: locationquery-service
+        ports:
+        - containerPort: 9011
+        resources: {}
+      restartPolicy: Always
+status: {}

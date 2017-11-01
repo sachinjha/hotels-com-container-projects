@@ -1,0 +1,10 @@
+---
+applications:
+- name: locationquery
+  memory: 256M
+  instances: 1
+  host: locationquery
+  services:
+  - redis
+  env:
+    ZIPKINURI: http://184.172.247.27:30073/

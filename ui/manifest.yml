@@ -1,0 +1,7 @@
+applications:
+- path: .
+  memory: 512M
+  instances: 1
+  name: hotels
+  host: hotels
+  disk_quota: 1024M

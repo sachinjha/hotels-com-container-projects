@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    io.kompose.service: locationquery-service
+  name: locationquery-service
+  namespace: hotelscom    
+spec:
+  type: NodePort
+  ports:
+  - name: "9011"
+    port: 9011
+    nodePort: 31011    
+    targetPort: 9011
+  selector:
+    io.kompose.service: locationquery-service
+status:
+  loadBalancer: {}

@@ -1,0 +1,7 @@
+name: dealsquery-service
+description: Deals Query Service
+version: 0.0.1
+keywords:
+  - dealsquery-service
+sources:
+home:

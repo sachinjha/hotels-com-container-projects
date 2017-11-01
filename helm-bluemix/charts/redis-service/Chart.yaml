@@ -1,0 +1,7 @@
+name: redis
+description: redis
+version: 0.0.1
+keywords:
+  - redis
+sources:
+home:

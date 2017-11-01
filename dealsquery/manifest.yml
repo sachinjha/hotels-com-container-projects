@@ -1,0 +1,11 @@
+---
+applications:
+- name: dealsquery
+  memory: 256M
+  instances: 1
+  host: dealsquery
+  services:
+  - redis
+  - mysql
+  env:
+    ZIPKINURI: http://184.172.247.27:30073/  

@@ -1,0 +1,9 @@
+mysql-python
+Flask==0.10.1
+Flask-Cors==3.0.2
+Flask-SQLAlchemy==2.1
+py_zipkin
+requests
+redis==2.10.3
+timeout-decorator
+gevent

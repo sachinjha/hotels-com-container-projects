@@ -1,0 +1,39 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    io.kompose.service: dealsquery-service
+  name: dealsquery-service
+  namespace: hotelscom  
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: dealsquery-service
+    spec:
+      containers:
+      - env:
+        - name: MQURI
+          value: "redis://redis:9001/0"
+        - name: PORT
+          value: "9013"
+        - name: ZIPKINURI
+          value: "http://zipkin:9411"
+        - name: ZIPKINSAMPLERATE
+          value: "1"
+        - name: MYSQLURI
+          value: "mysql://root:password@mysql:9002/sys"
+        - name: DEBUG
+          value: "1"          
+        imagePullPolicy: IfNotPresent           
+        image: hotels.com/dealsquery-service
+        name: dealsquery-service
+        ports:
+        - containerPort: 9013
+        resources: {}
+      restartPolicy: Always
+status: {}

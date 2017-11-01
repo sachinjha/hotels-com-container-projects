@@ -1,0 +1,161 @@
+mysqld, Version: 5.7.19 (MySQL Community Server (GPL)). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+mysqld, Version: 5.7.19 (MySQL Community Server (GPL)). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2017-08-06T12:04:58.772973Z	    4 Query	SET global log_output = 'table'
+mysqld, Version: 5.7.19 (MySQL Community Server (GPL)). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2017-08-17T11:18:07.299934Z	    6 Query	SELECT * FROM sys.searchqueue
+LIMIT 0, 1000
+2017-08-17T11:18:07.310852Z	    5 Query	SELECT st.* FROM performance_schema.events_statements_current st JOIN performance_schema.threads thr ON thr.thread_id = st.thread_id WHERE thr.processlist_id = 6
+2017-08-17T11:18:07.313493Z	    5 Query	SELECT st.* FROM performance_schema.events_stages_history_long st WHERE st.nesting_event_id = 155
+2017-08-17T11:18:07.315263Z	    5 Query	SELECT st.* FROM performance_schema.events_waits_history_long st WHERE st.nesting_event_id = 155
+2017-08-17T11:18:07.317560Z	    5 Query	SHOW INDEX FROM `sys`.`searchqueue`
+2017-08-17T11:18:26.868169Z	    5 Query	SHOW FULL TABLES FROM `sys`
+2017-08-17T11:18:26.990931Z	    5 Query	SHOW FULL TABLES FROM `sys`
+2017-08-17T11:18:27.082053Z	    5 Query	SHOW PROCEDURE STATUS WHERE Db='sys'
+2017-08-17T11:18:27.091992Z	    5 Query	SHOW FUNCTION STATUS WHERE Db='sys'
+2017-08-17T11:18:27.096986Z	    5 Query	SELECT EVENT_NAME FROM information_schema.EVENTS WHERE EVENT_SCHEMA = 'sys'
+2017-08-17T11:18:27.099907Z	    5 Query	SHOW COLUMNS FROM `sys`.`amenities`
+2017-08-17T11:18:27.102351Z	    5 Query	SHOW TRIGGERS FROM `sys` WHERE `Table` = 'amenities'
+2017-08-17T11:18:27.108441Z	    5 Query	SHOW COLUMNS FROM `sys`.`deals`
+2017-08-17T11:18:27.110154Z	    5 Query	SHOW TRIGGERS FROM `sys` WHERE `Table` = 'deals'
+2017-08-17T11:18:27.115258Z	    5 Query	SHOW COLUMNS FROM `sys`.`generalamenities`
+2017-08-17T11:18:27.116849Z	    5 Query	SHOW TRIGGERS FROM `sys` WHERE `Table` = 'generalamenities'
+2017-08-17T11:18:27.122307Z	    5 Query	SHOW COLUMNS FROM `sys`.`searchqueue`
+2017-08-17T11:18:27.123996Z	    5 Query	SHOW TRIGGERS FROM `sys` WHERE `Table` = 'searchqueue'
+2017-08-17T11:18:27.128853Z	    5 Query	SHOW COLUMNS FROM `sys`.`sys_config`
+2017-08-17T11:18:27.130718Z	    5 Query	SHOW TRIGGERS FROM `sys` WHERE `Table` = 'sys_config'
+2017-08-17T11:18:27.137308Z	    5 Query	SHOW COLUMNS FROM `sys`.`host_summary`
+2017-08-17T11:18:27.139689Z	    5 Query	SHOW COLUMNS FROM `sys`.`host_summary_by_file_io`
+2017-08-17T11:18:27.141573Z	    5 Query	SHOW COLUMNS FROM `sys`.`host_summary_by_file_io_type`
+2017-08-17T11:18:27.143272Z	    5 Query	SHOW COLUMNS FROM `sys`.`host_summary_by_stages`
+2017-08-17T11:18:27.145021Z	    5 Query	SHOW COLUMNS FROM `sys`.`host_summary_by_statement_latency`
+2017-08-17T11:18:27.146818Z	    5 Query	SHOW COLUMNS FROM `sys`.`host_summary_by_statement_type`
+2017-08-17T11:18:27.149407Z	    5 Query	SHOW COLUMNS FROM `sys`.`innodb_buffer_stats_by_schema`
+2017-08-17T11:18:27.151442Z	    5 Query	SHOW COLUMNS FROM `sys`.`innodb_buffer_stats_by_table`
+2017-08-17T11:18:27.153666Z	    5 Query	SHOW COLUMNS FROM `sys`.`innodb_lock_waits`
+2017-08-17T11:18:27.155743Z	    5 Query	SHOW COLUMNS FROM `sys`.`io_by_thread_by_latency`
+2017-08-17T11:18:27.157564Z	    5 Query	SHOW COLUMNS FROM `sys`.`io_global_by_file_by_bytes`
+2017-08-17T11:18:27.159560Z	    5 Query	SHOW COLUMNS FROM `sys`.`io_global_by_file_by_latency`
+2017-08-17T11:18:27.161275Z	    5 Query	SHOW COLUMNS FROM `sys`.`io_global_by_wait_by_bytes`
+2017-08-17T11:18:27.163567Z	    5 Query	SHOW COLUMNS FROM `sys`.`io_global_by_wait_by_latency`
+2017-08-17T11:18:27.166687Z	    5 Query	SHOW COLUMNS FROM `sys`.`latest_file_io`
+2017-08-17T11:18:27.169021Z	    5 Query	SHOW COLUMNS FROM `sys`.`memory_by_host_by_current_bytes`
+2017-08-17T11:18:27.170865Z	    5 Query	SHOW COLUMNS FROM `sys`.`memory_by_thread_by_current_bytes`
+2017-08-17T11:18:27.172643Z	    5 Query	SHOW COLUMNS FROM `sys`.`memory_by_user_by_current_bytes`
+2017-08-17T11:18:27.174563Z	    5 Query	SHOW COLUMNS FROM `sys`.`memory_global_by_current_bytes`
+2017-08-17T11:18:27.176254Z	    5 Query	SHOW COLUMNS FROM `sys`.`memory_global_total`
+2017-08-17T11:18:27.177849Z	    5 Query	SHOW COLUMNS FROM `sys`.`metrics`
+2017-08-17T11:18:27.182890Z	    5 Query	SHOW COLUMNS FROM `sys`.`processlist`
+2017-08-17T11:18:27.186135Z	    5 Query	SHOW COLUMNS FROM `sys`.`ps_check_lost_instrumentation`
+2017-08-17T11:18:27.187870Z	    5 Query	SHOW COLUMNS FROM `sys`.`schema_auto_increment_columns`
+2017-08-17T11:18:27.190132Z	    5 Query	SHOW COLUMNS FROM `sys`.`schema_index_statistics`
+2017-08-17T11:18:27.191877Z	    5 Query	SHOW COLUMNS FROM `sys`.`schema_object_overview`
+2017-08-17T11:18:27.194295Z	    5 Query	SHOW COLUMNS FROM `sys`.`schema_redundant_indexes`
+2017-08-17T11:18:27.196221Z	    5 Query	SHOW COLUMNS FROM `sys`.`schema_table_lock_waits`
+2017-08-17T11:18:27.199221Z	    5 Query	SHOW COLUMNS FROM `sys`.`schema_table_statistics`
+2017-08-17T11:18:27.201290Z	    5 Query	SHOW COLUMNS FROM `sys`.`schema_table_statistics_with_buffer`
+2017-08-17T11:18:27.203467Z	    5 Query	SHOW COLUMNS FROM `sys`.`schema_tables_with_full_table_scans`
+2017-08-17T11:18:27.205338Z	    5 Query	SHOW COLUMNS FROM `sys`.`schema_unused_indexes`
+2017-08-17T11:18:27.207356Z	    5 Query	SHOW COLUMNS FROM `sys`.`session`
+2017-08-17T11:18:27.209620Z	    5 Query	SHOW COLUMNS FROM `sys`.`session_ssl_status`
+2017-08-17T11:18:27.212465Z	    5 Query	SHOW COLUMNS FROM `sys`.`statement_analysis`
+2017-08-17T11:18:27.214388Z	    5 Query	SHOW COLUMNS FROM `sys`.`statements_with_errors_or_warnings`
+2017-08-17T11:18:27.216147Z	    5 Query	SHOW COLUMNS FROM `sys`.`statements_with_full_table_scans`
+2017-08-17T11:18:27.218022Z	    5 Query	SHOW COLUMNS FROM `sys`.`statements_with_runtimes_in_95th_percentile`
+2017-08-17T11:18:27.221593Z	    5 Query	SHOW COLUMNS FROM `sys`.`statements_with_sorting`
+2017-08-17T11:18:27.223460Z	    5 Query	SHOW COLUMNS FROM `sys`.`statements_with_temp_tables`
+2017-08-17T11:18:27.225878Z	    5 Query	SHOW COLUMNS FROM `sys`.`user_summary`
+2017-08-17T11:18:27.228590Z	    5 Query	SHOW COLUMNS FROM `sys`.`user_summary_by_file_io`
+2017-08-17T11:18:27.230407Z	    5 Query	SHOW COLUMNS FROM `sys`.`user_summary_by_file_io_type`
+2017-08-17T11:18:27.232186Z	    5 Query	SHOW COLUMNS FROM `sys`.`user_summary_by_stages`
+2017-08-17T11:18:27.233845Z	    5 Query	SHOW COLUMNS FROM `sys`.`user_summary_by_statement_latency`
+2017-08-17T11:18:27.235629Z	    5 Query	SHOW COLUMNS FROM `sys`.`user_summary_by_statement_type`
+2017-08-17T11:18:27.237326Z	    5 Query	SHOW COLUMNS FROM `sys`.`version`
+2017-08-17T11:18:27.238930Z	    5 Query	SHOW COLUMNS FROM `sys`.`wait_classes_global_by_avg_latency`
+2017-08-17T11:18:27.240869Z	    5 Query	SHOW COLUMNS FROM `sys`.`wait_classes_global_by_latency`
+2017-08-17T11:18:27.242629Z	    5 Query	SHOW COLUMNS FROM `sys`.`waits_by_host_by_latency`
+2017-08-17T11:18:27.244300Z	    5 Query	SHOW COLUMNS FROM `sys`.`waits_by_user_by_latency`
+2017-08-17T11:18:27.245972Z	    5 Query	SHOW COLUMNS FROM `sys`.`waits_global_by_latency`
+2017-08-17T11:18:27.247750Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$host_summary`
+2017-08-17T11:18:27.249774Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$host_summary_by_file_io`
+2017-08-17T11:18:27.251480Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$host_summary_by_file_io_type`
+2017-08-17T11:18:27.253292Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$host_summary_by_stages`
+2017-08-17T11:18:27.254967Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$host_summary_by_statement_latency`
+2017-08-17T11:18:27.256686Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$host_summary_by_statement_type`
+2017-08-17T11:18:27.258416Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$innodb_buffer_stats_by_schema`
+2017-08-17T11:18:27.260272Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$innodb_buffer_stats_by_table`
+2017-08-17T11:18:27.262023Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$innodb_lock_waits`
+2017-08-17T11:18:27.263996Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$io_by_thread_by_latency`
+2017-08-17T11:18:27.265932Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$io_global_by_file_by_bytes`
+2017-08-17T11:18:27.267689Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$io_global_by_file_by_latency`
+2017-08-17T11:18:27.269332Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$io_global_by_wait_by_bytes`
+2017-08-17T11:18:27.271207Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$io_global_by_wait_by_latency`
+2017-08-17T11:18:27.273003Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$latest_file_io`
+2017-08-17T11:18:27.275040Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$memory_by_host_by_current_bytes`
+2017-08-17T11:18:27.276907Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$memory_by_thread_by_current_bytes`
+2017-08-17T11:18:27.278667Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$memory_by_user_by_current_bytes`
+2017-08-17T11:18:27.280414Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$memory_global_by_current_bytes`
+2017-08-17T11:18:27.282154Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$memory_global_total`
+2017-08-17T11:18:27.283713Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$processlist`
+2017-08-17T11:18:27.285821Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$ps_digest_95th_percentile_by_avg_us`
+2017-08-17T11:18:27.287580Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$ps_digest_avg_latency_distribution`
+2017-08-17T11:18:27.289216Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$ps_schema_table_statistics_io`
+2017-08-17T11:18:27.290997Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$schema_flattened_keys`
+2017-08-17T11:18:27.292734Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$schema_index_statistics`
+2017-08-17T11:18:27.294512Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$schema_table_lock_waits`
+2017-08-17T11:18:27.296409Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$schema_table_statistics`
+2017-08-17T11:18:27.298502Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$schema_table_statistics_with_buffer`
+2017-08-17T11:18:27.300781Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$schema_tables_with_full_table_scans`
+2017-08-17T11:18:27.302532Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$session`
+2017-08-17T11:18:27.304883Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$statement_analysis`
+2017-08-17T11:18:27.306773Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$statements_with_errors_or_warnings`
+2017-08-17T11:18:27.309855Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$statements_with_full_table_scans`
+2017-08-17T11:18:27.311749Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$statements_with_runtimes_in_95th_percentile`
+2017-08-17T11:18:27.313833Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$statements_with_sorting`
+2017-08-17T11:18:27.315639Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$statements_with_temp_tables`
+2017-08-17T11:18:27.317382Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$user_summary`
+2017-08-17T11:18:27.319430Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$user_summary_by_file_io`
+2017-08-17T11:18:27.321381Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$user_summary_by_file_io_type`
+2017-08-17T11:18:27.323432Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$user_summary_by_stages`
+2017-08-17T11:18:27.325177Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$user_summary_by_statement_latency`
+2017-08-17T11:18:27.326888Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$user_summary_by_statement_type`
+2017-08-17T11:18:27.328659Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$wait_classes_global_by_avg_latency`
+2017-08-17T11:18:27.330794Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$wait_classes_global_by_latency`
+2017-08-17T11:18:27.332611Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$waits_by_host_by_latency`
+2017-08-17T11:18:27.334337Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$waits_by_user_by_latency`
+2017-08-17T11:18:27.335983Z	    5 Query	SHOW COLUMNS FROM `sys`.`x$waits_global_by_latency`
+2017-08-17T11:18:35.120115Z	    6 Query	truncate sys.searchqueue
+2017-08-17T11:18:46.239314Z	    6 Query	SELECT * FROM sys.deals
+LIMIT 0, 1000
+2017-08-17T11:18:46.252437Z	    5 Query	SELECT st.* FROM performance_schema.events_statements_current st JOIN performance_schema.threads thr ON thr.thread_id = st.thread_id WHERE thr.processlist_id = 6
+2017-08-17T11:18:46.254534Z	    5 Query	SELECT st.* FROM performance_schema.events_stages_history_long st WHERE st.nesting_event_id = 159
+2017-08-17T11:18:46.256305Z	    5 Query	SELECT st.* FROM performance_schema.events_waits_history_long st WHERE st.nesting_event_id = 159
+2017-08-17T11:18:46.258285Z	    5 Query	SHOW INDEX FROM `sys`.`deals`
+2017-08-17T11:18:53.796388Z	    6 Query	SELECT * FROM sys.searchqueue
+LIMIT 0, 1000
+2017-08-17T11:18:53.802812Z	    5 Query	SELECT st.* FROM performance_schema.events_statements_current st JOIN performance_schema.threads thr ON thr.thread_id = st.thread_id WHERE thr.processlist_id = 6
+2017-08-17T11:18:53.804769Z	    5 Query	SELECT st.* FROM performance_schema.events_stages_history_long st WHERE st.nesting_event_id = 161
+2017-08-17T11:18:53.807367Z	    5 Query	SELECT st.* FROM performance_schema.events_waits_history_long st WHERE st.nesting_event_id = 161
+2017-08-17T11:18:53.809315Z	    5 Query	SHOW INDEX FROM `sys`.`searchqueue`
+2017-08-17T11:19:00.727259Z	    6 Query	SELECT * FROM sys.amenities
+LIMIT 0, 1000
+2017-08-17T11:19:00.733685Z	    5 Query	SELECT st.* FROM performance_schema.events_statements_current st JOIN performance_schema.threads thr ON thr.thread_id = st.thread_id WHERE thr.processlist_id = 6
+2017-08-17T11:19:00.735814Z	    5 Query	SELECT st.* FROM performance_schema.events_stages_history_long st WHERE st.nesting_event_id = 163
+2017-08-17T11:19:00.738506Z	    5 Query	SELECT st.* FROM performance_schema.events_waits_history_long st WHERE st.nesting_event_id = 163
+2017-08-17T11:19:00.740473Z	    5 Query	SHOW INDEX FROM `sys`.`amenities`
+2017-08-17T11:19:03.338945Z	    6 Query	SELECT * FROM sys.generalamenities
+LIMIT 0, 1000
+2017-08-17T11:19:03.345244Z	    5 Query	SELECT st.* FROM performance_schema.events_statements_current st JOIN performance_schema.threads thr ON thr.thread_id = st.thread_id WHERE thr.processlist_id = 6
+2017-08-17T11:19:03.347558Z	    5 Query	SELECT st.* FROM performance_schema.events_stages_history_long st WHERE st.nesting_event_id = 165
+2017-08-17T11:19:03.349966Z	    5 Query	SELECT st.* FROM performance_schema.events_waits_history_long st WHERE st.nesting_event_id = 165
+2017-08-17T11:19:03.352006Z	    5 Query	SHOW INDEX FROM `sys`.`generalamenities`
+2017-08-17T11:19:28.050804Z	    6 Query	SET global log_output = 'table'
+mysqld, Version: 5.7.19 (MySQL Community Server (GPL)). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2017-08-22T02:42:44.782048Z	    7 Query	SET global log_output = 'table'

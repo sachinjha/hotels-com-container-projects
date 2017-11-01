@@ -1,0 +1,43 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    io.kompose.service: hotelquery-service
+  name: hotelquery-service
+  namespace: hotelscom    
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: hotelquery-service
+    spec:
+      imagePullSecrets:
+        - name: regsecret    
+      containers:
+      - env:
+        - name: MQURI
+          value: redis://redis:9001/0
+        - name: PORT
+          value: "9012"
+        - name: REDISURI
+          value: redis://redis:9001/0
+        - name: ZIPKINURI
+          value: http://zipkin:9411
+        - name: ZIPKINSAMPLERATE
+          value: "1"
+        - name: HOTELSEARCHTIMEDELAY
+          value: "0.1"    
+        - name: DEBUG
+          value: "1"                 
+        imagePullPolicy: IfNotPresent           
+        image: mycluster.icp:8500/hotelscom/hotelquery-service
+        name: hotelquery-service
+        ports:
+        - containerPort: 9012
+        resources: {}
+      restartPolicy: Always
+status: {}
