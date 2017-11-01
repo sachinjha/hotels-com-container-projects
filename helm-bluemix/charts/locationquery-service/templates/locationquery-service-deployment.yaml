@@ -28,7 +28,7 @@ spec:
         - name: ZIPKINSAMPLERATE
           value: "1"
         imagePullPolicy: IfNotPresent  
-        image: mycluster.icp:8500/hotelscom/locationquery-service
+        image: {{.Values.image-locationquery}}
         name: locationquery-service
         ports:
         - containerPort: 9011

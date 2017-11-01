@@ -32,7 +32,7 @@ spec:
         - name: DEBUG
           value: "1"           
         imagePullPolicy: IfNotPresent          
-        image: mycluster.icp:8500/hotelscom/amenitiesquery-service
+        image: {{.Values.image-amenitiesquery}}
         name: amenitiesquery-service
         ports:
         - containerPort: 9014

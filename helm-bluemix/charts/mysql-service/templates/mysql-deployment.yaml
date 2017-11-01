@@ -31,6 +31,5 @@ spec:
       restartPolicy: Always
       volumes:
       - name: mysql-claim0
-        persistentVolumeClaim:
-          claimName: mysql-claim0
+        emptyDir: {}
 status: {}

@@ -1,0 +1,20 @@
+title: hotels.com
+
+amenitiesquery-service:
+    image-amenitiesquery: <registryurl>/<namespace>/<image>:<tag>
+
+controller-service:
+    image-controller: <registryurl>/<namespace>/<image>:<tag>
+
+dealsquery-service:
+    image-dealsquery: <registryurl>/<namespace>/<image>:<tag>
+
+hotelquery-service:
+    image-hotelquery: <registryurl>/<namespace>/<image>:<tag>
+
+locationquery-service:
+    image-locationquery: <registryurl>/<namespace>/<image>:<tag>
+
+ui-service:
+    image-ui: <registryurl>/<namespace>/<image>:<tag>
+

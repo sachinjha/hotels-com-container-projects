@@ -32,7 +32,7 @@ spec:
         - name: DEBUG
           value: "1"          
         imagePullPolicy: IfNotPresent           
-        image: mycluster.icp:8500/hotelscom/dealsquery-service
+        image: {{.Values.image-dealsquery}}
         name: dealsquery-service
         ports:
         - containerPort: 9013

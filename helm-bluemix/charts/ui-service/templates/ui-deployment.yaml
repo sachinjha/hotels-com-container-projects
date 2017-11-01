@@ -24,7 +24,7 @@ spec:
         - name: APIENDPOINTURL
           value: http://9.113.140.160:31101
         imagePullPolicy: IfNotPresent          
-        image: mycluster.icp:8500/hotelscom/ui
+        image: {{.Values.image-ui}}
         name: ui
         ports:
         - containerPort: 9102
@@ -35,6 +35,5 @@ spec:
       restartPolicy: Always
       volumes:
       - name: images-claim0
-        persistentVolumeClaim:
-          claimName: images-claim0      
+        emptyDir: {}    
 status: {}

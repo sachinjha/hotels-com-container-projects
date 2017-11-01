@@ -28,6 +28,5 @@ spec:
       restartPolicy: Always
       volumes:
       - name: redis-claim0
-        persistentVolumeClaim:
-          claimName: redis-claim0
+        emptyDir: {}
 status: {}
