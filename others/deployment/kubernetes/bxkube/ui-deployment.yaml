@@ -35,6 +35,5 @@ spec:
       restartPolicy: Always
       volumes:
       - name: images-claim0
-        persistentVolumeClaim:
-          claimName: images-claim0      
+        emptyDir: {}     
 status: {}
