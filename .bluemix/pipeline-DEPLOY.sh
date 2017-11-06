@@ -38,7 +38,7 @@ if [ ! -f ./yaml ]; then
 fi
 
 ./yaml w --inplace ui-deployment.yaml spec.template.spec.containers.env[1].value "http://${CONTROLLER_CLUSTER_IP}:31101"
-cat  definitions/onboarding-event-api.yaml
+cat  ui-deployment.yaml
 
 kubectl apply -f ui-deployment.yaml
 kubectl apply -f ui-service.yaml
