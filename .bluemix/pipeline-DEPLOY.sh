@@ -27,7 +27,7 @@ kubectl apply -f controller-service.yaml
 kubectl apply -f zipkin-deployment.yaml
 kubectl apply -f zipkin-service.yaml
 
-
+kubectl get services
 
 CONTROLLER_CLUSTER_IP=`kubectl get services/controller -o=jsonpath="{.spec.clusterIP}"`
 
