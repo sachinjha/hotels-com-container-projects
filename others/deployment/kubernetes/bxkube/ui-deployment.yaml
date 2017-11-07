@@ -22,9 +22,9 @@ spec:
         - name: PORT
           value: "9102"
         - name: APIENDPOINTURL
-          value: http://169.51.13.228:31101
+          value: http://172.21.236.228:31101
         imagePullPolicy: IfNotPresent          
-        image: registry.eu-gb.bluemix.net/arunb/hotels.com/ui
+        image: registry.ng.bluemix.net/sachinkj/hotels.com/ui
         name: ui
         ports:
         - containerPort: 9102
