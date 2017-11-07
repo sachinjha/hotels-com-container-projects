@@ -27,6 +27,8 @@ kubectl apply -f controller-service.yaml
 kubectl apply -f zipkin-deployment.yaml
 kubectl apply -f zipkin-service.yaml
 
+kubectl config set-context $(kubectl config current-context) --namespace=hotelscom
+
 kubectl get services
 
 CONTROLLER_CLUSTER_IP=`kubectl get services/controller -o=jsonpath="{.spec.clusterIP}"`
@@ -37,7 +39,7 @@ if [ ! -f ./yaml ]; then
     chmod +x yaml
 fi
 
-./yaml w --inplace ui-deployment.yaml spec.template.spec.containers.env[1].value "http://${CONTROLLER_CLUSTER_IP}:31101"
+./yaml w --inplace ui-deployment.yaml spec.template.spec.containers[0][1].value "http://${CONTROLLER_CLUSTER_IP}:31101"
 cat  ui-deployment.yaml
 
 kubectl apply -f ui-deployment.yaml
